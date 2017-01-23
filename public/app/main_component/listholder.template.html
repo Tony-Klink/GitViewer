@@ -1,0 +1,25 @@
+<div class="container-fluid" style="overflow: hidden">
+<div class="row">
+    <div class="col">
+        <button class="btn btn-secondary btn-block" (click)="fillData(1000, 2000, 1)">Get Repos Left</button>
+
+        <p-dataScroller [value]="repos1" [rows]="10" [inline]="true" scrollHeight="650px">
+            <template let-repo pTemplate="item">
+                <div><b>{{repo.name}}:</b> {{repo.description}}</div>
+            </template>
+        </p-dataScroller>
+    </div>
+
+    <div class="col">
+        <button class="btn btn-secondary btn-block" (click)="fillData(0, 1000, 2)">Get Repos Right</button>
+
+        <p-dataScroller [value]="repos2" [rows]="10" [inline]="true" scrollHeight="650px">
+            <template let-repo pTemplate="item">
+                <div><b>{{repo.name}}:</b> {{repo.description}}</div>
+            </template>
+        </p-dataScroller>
+    </div>
+</div>
+<div class="clear">
+    <p>{{errorMessage}}</p>
+</div>
